@@ -13,6 +13,7 @@ import { addParameters } from '@storybook/react';
 import { withRootAttributes } from '../withRootAttributes';
 
 addParameters({
+	tooltip: true,
 	rootAttributes: [
 		{
 			root: 'html',

@@ -1,11 +1,10 @@
 {
 	"name": "storybook-addon-root-attributes",
-	"version": "0.1.2",
+	"version": "0.1.1",
 	"description": "Change root attributes",
 	"keywords": [
 		"storybook-addons",
-		"root-attributes",
-		"storybook-addons"
+		"root-attributes"
 	],
 	"repository": {
 		"type": "git",
@@ -86,6 +85,6 @@
 			"react",
 			"html"
 		],
-		"icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
+		"icon": "https://avatars.githubusercontent.com/u/54893898?s=64&v=4"
 	}
 }
