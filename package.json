@@ -1,6 +1,6 @@
 {
 	"name": "storybook-addon-root-attributes",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Change your root attributes",
 	"keywords": [
 		"storybook-addons",
