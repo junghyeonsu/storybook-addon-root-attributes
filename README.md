@@ -2,7 +2,7 @@
 
 ![demo](/assets/demo.gif)
 
-> This project referenced [le0pard/storybook-addon-root-attribute](https://github.com/le0pard/storybook-addon-root-attribute)
+> This project was inspired by [le0pard/storybook-addon-root-attribute](https://github.com/le0pard/storybook-addon-root-attribute)
 
 Storybook Addon Root Attributes to switch html, body or some element attribute at runtime for your story [Storybook](https://storybook.js.org)
 
@@ -35,18 +35,18 @@ import { addParameters } from '@storybook/react';
 
 // global
 addParameters({
-	rootAttribute: {
-		defaultState: {
-			name: 'Default',
-			value: null,
-		},
-		states: [
-			{
-				name: 'Dark',
-				value: 'dark',
-			},
-		],
-	},
+  rootAttribute: {
+    defaultState: {
+      name: 'Default',
+      value: null,
+    },
+    states: [
+      {
+        name: 'Dark',
+        value: 'dark',
+      },
+    ],
+  },
 });
 ```
 
@@ -55,39 +55,34 @@ You can use the `rootAttributes` parameter to override resources on each story i
 ```js
 // per story: Button.stories.js
 export default {
-	title: 'Example/Button',
-	component: Button,
-	parameters: {
-		myAddonParameter: `
-	<MyComponent boolProp scalarProp={1} complexProp={{ foo: 1, bar: '2' }}>
-		<SomeOtherComponent funcProp={(a) => a.id} />
-	</MyComponent>
-	`,
-		rootAttributes: [
-			{
-				root: 'html',
-				attribute: 'data-color-scheme',
-				defaultState: {
-					name: 'Yellow',
-					value: 'yellow',
-				},
-				states: [
-					{
-						name: 'Blue',
-						value: 'blue',
-					},
-					{
-						name: 'Red',
-						value: 'red',
-					},
-					{
-						name: 'Green',
-						value: 'green',
-					},
-				],
-			},
-		],
-	},
+  title: 'Example/Button',
+  component: Button,
+  parameters: {
+    rootAttributes: [
+      {
+        root: 'html',
+        attribute: 'data-color-scheme',
+        defaultState: {
+          name: 'Yellow',
+          value: 'yellow',
+        },
+        states: [
+          {
+            name: 'Blue',
+            value: 'blue',
+          },
+          {
+            name: 'Red',
+            value: 'red',
+          },
+          {
+            name: 'Green',
+            value: 'green',
+          },
+        ],
+      },
+    ],
+  },
 };
 ```
 
@@ -95,41 +90,41 @@ If you want to use a tooltip (panel will not dissapear), you need to set `rootAt
 
 ```js
 addParameters({
-	rootAttributesTooltip: true, // you need to set this property
-	rootAttributes: [
-		{
-			root: 'html',
-			attribute: 'data-scale-color',
-			defaultState: {
-				name: 'Light',
-				value: 'light',
-			},
-			states: [
-				{
-					name: 'Dark',
-					value: 'dark',
-				},
-				{
-					name: 'Gray',
-					value: 'gray',
-				},
-			],
-		},
-		{
-			root: 'html',
-			attribute: 'data-letter-spacing',
-			defaultState: {
-				name: 'IOS',
-				value: 'ios',
-			},
-			states: [
-				{
-					name: 'Android',
-					value: 'android',
-				},
-			],
-		},
-	],
+  rootAttributesTooltip: true, // you need to set this property
+  rootAttributes: [
+    {
+      root: 'html',
+      attribute: 'data-scale-color',
+      defaultState: {
+        name: 'Light',
+        value: 'light',
+      },
+      states: [
+        {
+          name: 'Dark',
+          value: 'dark',
+        },
+        {
+          name: 'Gray',
+          value: 'gray',
+        },
+      ],
+    },
+    {
+      root: 'html',
+      attribute: 'data-letter-spacing',
+      defaultState: {
+        name: 'IOS',
+        value: 'ios',
+      },
+      states: [
+        {
+          name: 'Android',
+          value: 'android',
+        },
+      ],
+    },
+  ],
 });
 ```
 
@@ -155,40 +150,40 @@ Configuration example:
 
 ```js
 addParameters({
-	rootAttributesTooltip: true,
-	rootAttributes: [
-		{
-			root: 'html',
-			attribute: 'data-scale-color',
-			defaultState: {
-				name: 'Light',
-				value: 'light',
-			},
-			states: [
-				{
-					name: 'Dark',
-					value: 'dark',
-				},
-				{
-					name: 'Gray',
-					value: 'gray',
-				},
-			],
-		},
-		{
-			root: 'html',
-			attribute: 'data-letter-spacing',
-			defaultState: {
-				name: 'IOS',
-				value: 'ios',
-			},
-			states: [
-				{
-					name: 'Android',
-					value: 'android',
-				},
-			],
-		},
-	],
+  rootAttributesTooltip: true,
+  rootAttributes: [
+    {
+      root: 'html',
+      attribute: 'data-scale-color',
+      defaultState: {
+        name: 'Light',
+        value: 'light',
+      },
+      states: [
+        {
+          name: 'Dark',
+          value: 'dark',
+        },
+        {
+          name: 'Gray',
+          value: 'gray',
+        },
+      ],
+    },
+    {
+      root: 'html',
+      attribute: 'data-letter-spacing',
+      defaultState: {
+        name: 'IOS',
+        value: 'ios',
+      },
+      states: [
+        {
+          name: 'Android',
+          value: 'android',
+        },
+      ],
+    },
+  ],
 });
 ```
