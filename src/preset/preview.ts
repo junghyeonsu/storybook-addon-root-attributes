@@ -26,6 +26,10 @@ addParameters({
 					name: 'Dark',
 					value: 'dark',
 				},
+				{
+					name: 'Gray',
+					value: 'gray',
+				},
 			],
 		},
 		{

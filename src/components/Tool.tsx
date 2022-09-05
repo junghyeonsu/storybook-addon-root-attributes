@@ -1,21 +1,20 @@
 import React from 'react';
 import { useAddonState, useGlobals, useStorybookApi } from '@storybook/api';
-import { Icons, IconButton, WithTooltip, TooltipLinkList, Badge } from '@storybook/components';
+import { Icons, IconButton, WithTooltip, TooltipLinkList, Badge, H4, Div } from '@storybook/components';
 
-import { PARAM_KEY, TOOL_ID, ACTIVE_PARAM_KEY, EVENTS } from '../constants';
+import { PARAM_KEY, TOOL_ID, EVENTS } from '../constants';
 import { RootAttribute } from '../types';
 
-// https://next--storybookjs.netlify.app/official-storybook/?path=/story/basics-icon--labels
 export const Tool = () => {
 	const api = useStorybookApi();
 	const rootAttributes = api.getCurrentParameter<RootAttribute[]>(PARAM_KEY);
-	const [isActive, setIsActive] = useAddonState<boolean>('isActive', false);
+	const [isToolActive, setIsToolActive] = useAddonState<boolean>('isToolActive', false);
 	const [globals, setGlobals] = useGlobals();
 
 	if (!rootAttributes) return null;
 	if (!Array.isArray(rootAttributes)) return <div>Root Attributes have to array</div>;
 
-	const toggleMyTool = () => setIsActive((prev) => !prev);
+	const toggleMyTool = () => setIsToolActive((prev) => !prev);
 
 	const lists = rootAttributes.map(({ root, attribute, defaultState, states }) => {
 		return {
@@ -58,18 +57,20 @@ export const Tool = () => {
 			placement="top"
 			trigger="click"
 			key={TOOL_ID}
-			tooltipShown={isActive}
+			tooltipShown={isToolActive}
 			onVisibilityChange={toggleMyTool}
 			tooltip={lists.map(({ attribute, list }) => (
-				<div key={attribute}>
-					<Badge status="critical">{attribute}</Badge>
+				<Div key={attribute}>
+					<Div style={{ padding: '20px 15px 5px 15px' }}>
+						<H4>{attribute}</H4>
+					</Div>
 					<TooltipLinkList links={list} />
-				</div>
+				</Div>
 			))}
 			closeOnClick={true}
 		>
 			<IconButton key="root-attribute" active={true} title="Root Attributes">
-				<Icons icon="structure" />
+				<Icons icon="cog" />
 			</IconButton>
 		</WithTooltip>
 	);
