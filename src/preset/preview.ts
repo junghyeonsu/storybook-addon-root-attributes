@@ -13,11 +13,11 @@ import { addParameters } from '@storybook/react';
 import { withRootAttributes } from '../withRootAttributes';
 
 addParameters({
-	tooltip: true,
+	rootAttributesTooltip: true,
 	rootAttributes: [
 		{
 			root: 'html',
-			attribute: 'data-seed-scale-color',
+			attribute: 'data-scale-color',
 			defaultState: {
 				name: 'Light',
 				value: 'light',
@@ -35,7 +35,7 @@ addParameters({
 		},
 		{
 			root: 'html',
-			attribute: 'data-seed-letter-spacing',
+			attribute: 'data-letter-spacing',
 			defaultState: {
 				name: 'IOS',
 				value: 'ios',

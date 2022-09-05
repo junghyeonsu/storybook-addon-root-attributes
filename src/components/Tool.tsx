@@ -8,7 +8,7 @@ import { RootAttribute } from '../types';
 export const Tool = () => {
 	const api = useStorybookApi();
 	const rootAttributes = api.getCurrentParameter<RootAttribute[]>(PARAM_KEY);
-	const isTooltip = api.getCurrentParameter<boolean>('tooltip');
+	const isTooltip = api.getCurrentParameter<boolean>('rootAttributesTooltip');
 	const [isToolActive, setIsToolActive] = useAddonState<boolean>('isToolActive', false);
 	const [globals, setGlobals] = useGlobals();
 

@@ -1,92 +1,194 @@
-# Storybook Addon storybook-addon-root-attributes
-Change root attributes
+# Storybook Addon Root Attributes
 
-### Development scripts
+![demo](/assets/demo.gif)
 
-- `yarn start` runs babel in watch mode and starts Storybook
-- `yarn build` build and package your addon code
+> This project referenced [le0pard/storybook-addon-root-attribute](https://github.com/le0pard/storybook-addon-root-attribute)
 
-### Switch from TypeScript to JavaScript
+Storybook Addon Root Attributes to switch html, body or some element attribute at runtime for your story [Storybook](https://storybook.js.org)
 
-Don't want to use TypeScript? We offer a handy eject command: `yarn eject-ts`
+## [Demo](https://storybook-addon-root-attributes.vercel.app/)
 
-This will convert all code to JS. It is a destructive process, so we recommended running this before you start writing any code.
-
-## What's included?
-
-![Demo](https://user-images.githubusercontent.com/42671/107857205-e7044380-6dfa-11eb-8718-ad02e3ba1a3f.gif)
-
-The addon code lives in `src`. It demonstrates all core addon related concepts. The three [UI paradigms](https://storybook.js.org/docs/react/addons/addon-types#ui-based-addons)
-
-- `src/Tool.js`
-- `src/Panel.js`
-- `src/Tab.js`
-
-Which, along with the addon itself, are registered in `src/preset/manager.js`.
-
-Managing State and interacting with a story:
-
-- `src/withGlobals.js` & `src/Tool.js` demonstrates how to use `useGlobals` to manage global state and modify the contents of a Story.
-- `src/withRoundTrip.js` & `src/Panel.js` demonstrates two-way communication using channels.
-- `src/Tab.js` demonstrates how to use `useParameter` to access the current story's parameters.
-
-Your addon might use one or more of these patterns. Feel free to delete unused code. Update `src/preset/manager.js` and `src/preset/preview.js` accordingly.
-
-Lastly, configure you addon name in `src/constants.js`.
-
-### Metadata
-
-Storybook addons are listed in the [catalog](https://storybook.js.org/addons) and distributed via npm. The catalog is populated by querying npm's registry for Storybook-specific metadata in `package.json`. This project has been configured with sample data. Learn more about available options in the [Addon metadata docs](https://storybook.js.org/docs/react/addons/addon-catalog#addon-metadata).
-
-## Release Management
-
-### Setup
-
-This project is configured to use [auto](https://github.com/intuit/auto) for release management. It generates a changelog and pushes it to both GitHub and npm. Therefore, you need to configure access to both:
-
-- [`NPM_TOKEN`](https://docs.npmjs.com/creating-and-viewing-access-tokens#creating-access-tokens) Create a token with both _Read and Publish_ permissions.
-- [`GH_TOKEN`](https://github.com/settings/tokens) Create a token with the `repo` scope.
-
-Then open your `package.json` and edit the following fields:
-
-- `name`
-- `author`
-- `repository`
-
-#### Local
-
-To use `auto` locally create a `.env` file at the root of your project and add your tokens to it:
-
-```bash
-GH_TOKEN=<value you just got from GitHub>
-NPM_TOKEN=<value you just got from npm>
-```
-
-Lastly, **create labels on GitHub**. You’ll use these labels in the future when making changes to the package.
-
-```bash
-npx auto create-labels
-```
-
-If you check on GitHub, you’ll now see a set of labels that `auto` would like you to use. Use these to tag future pull requests.
-
-#### GitHub Actions
-
-This template comes with GitHub actions already set up to publish your addon anytime someone pushes to your repository.
-
-Go to `Settings > Secrets`, click `New repository secret`, and add your `NPM_TOKEN`.
-
-### Creating a release
-
-To create a release locally you can run the following command, otherwise the GitHub action will make the release for you.
+## Installation
 
 ```sh
-yarn release
+yarn add -D storybook-addon-root-attributes
 ```
 
-That will:
+## Configuration
 
-- Build and package the addon code
-- Bump the version
-- Push a release to GitHub and npm
-- Push a changelog to GitHub
+create a file called `main.js` and add addon in `addons` section:
+
+```js
+module.exports = {
+  ...
+  addons: [
+    ...
+    'storybook-addon-root-attributes'
+  ]
+};
+```
+
+## Usage
+
+```js
+import { addParameters } from '@storybook/react';
+
+// global
+addParameters({
+	rootAttribute: {
+		defaultState: {
+			name: 'Default',
+			value: null,
+		},
+		states: [
+			{
+				name: 'Dark',
+				value: 'dark',
+			},
+		],
+	},
+});
+```
+
+You can use the `rootAttributes` parameter to override resources on each story individually:
+
+```js
+// per story: Button.stories.js
+export default {
+	title: 'Example/Button',
+	component: Button,
+	parameters: {
+		myAddonParameter: `
+	<MyComponent boolProp scalarProp={1} complexProp={{ foo: 1, bar: '2' }}>
+		<SomeOtherComponent funcProp={(a) => a.id} />
+	</MyComponent>
+	`,
+		rootAttributes: [
+			{
+				root: 'html',
+				attribute: 'data-color-scheme',
+				defaultState: {
+					name: 'Yellow',
+					value: 'yellow',
+				},
+				states: [
+					{
+						name: 'Blue',
+						value: 'blue',
+					},
+					{
+						name: 'Red',
+						value: 'red',
+					},
+					{
+						name: 'Green',
+						value: 'green',
+					},
+				],
+			},
+		],
+	},
+};
+```
+
+If you want to use a tooltip (panel will not dissapear), you need to set `rootAttributesTooltip` in parameters with `true` value:
+
+```js
+addParameters({
+	rootAttributesTooltip: true, // you need to set this property
+	rootAttributes: [
+		{
+			root: 'html',
+			attribute: 'data-scale-color',
+			defaultState: {
+				name: 'Light',
+				value: 'light',
+			},
+			states: [
+				{
+					name: 'Dark',
+					value: 'dark',
+				},
+				{
+					name: 'Gray',
+					value: 'gray',
+				},
+			],
+		},
+		{
+			root: 'html',
+			attribute: 'data-letter-spacing',
+			defaultState: {
+				name: 'IOS',
+				value: 'ios',
+			},
+			states: [
+				{
+					name: 'Android',
+					value: 'android',
+				},
+			],
+		},
+	],
+});
+```
+
+## Configuration
+
+Configuration params for `rootAttributes` parameter:
+
+| **Name**              | _Default_       | _Variants_                                        | **Description**                  |
+| --------------------- | --------------- | ------------------------------------------------- | -------------------------------- |
+| rootAttributes        | rootAttribute[] | array with objects, which contain `rootAttribute` | Check more detail info in below  |
+| rootAttributesTooltip | false           | boolean value                                     | Add tooltip button for storybook |
+
+Configuration params for `rootAttribute` parameter:
+
+| **Name**     | _Default_ | _Variants_                                                                                          | **Description**                                                                                                         |
+| ------------ | --------- | --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| root         | 'html'    | 'html', 'body', or first element returned by 'document.querySelector(), or if none found -- 'html'' | Root node, which attribute will changed by addon                                                                        |
+| attribute    | 'class'   | any valid attribute name                                                                            | Attribute name                                                                                                          |
+| defaultState | {}        | should contain `name` and `value`                                                                   | Default state for attribute. Value `nil` will remove attribute from root                                                |
+| states       | []        | array with objects, which contain unique `name` and `value` for attribute                           | All needed states for attribute values. Each object should contain unique `name` (for button) and `value` for attribute |
+
+Configuration example:
+
+```js
+addParameters({
+	rootAttributesTooltip: true,
+	rootAttributes: [
+		{
+			root: 'html',
+			attribute: 'data-scale-color',
+			defaultState: {
+				name: 'Light',
+				value: 'light',
+			},
+			states: [
+				{
+					name: 'Dark',
+					value: 'dark',
+				},
+				{
+					name: 'Gray',
+					value: 'gray',
+				},
+			],
+		},
+		{
+			root: 'html',
+			attribute: 'data-letter-spacing',
+			defaultState: {
+				name: 'IOS',
+				value: 'ios',
+			},
+			states: [
+				{
+					name: 'Android',
+					value: 'android',
+				},
+			],
+		},
+	],
+});
+```

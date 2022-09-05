@@ -13,15 +13,37 @@ export default {
 		rootAttributes: [
 			{
 				root: 'html',
-				attribute: 'data-seed-scale-color2',
+				attribute: 'data-color-scheme',
 				defaultState: {
-					name: 'Light2',
-					value: 'light2',
+					name: 'Yellow',
+					value: 'yellow',
 				},
 				states: [
 					{
-						name: 'Dark2',
-						value: 'dark2',
+						name: 'Blue',
+						value: 'blue',
+					},
+					{
+						name: 'Red',
+						value: 'red',
+					},
+					{
+						name: 'Green',
+						value: 'green',
+					},
+				],
+			},
+			{
+				root: 'html',
+				attribute: 'data-letter-spacing',
+				defaultState: {
+					name: 'IOS',
+					value: 'ios',
+				},
+				states: [
+					{
+						name: 'Android',
+						value: 'android',
 					},
 				],
 			},
