@@ -1,9 +1,9 @@
 import React from 'react';
 import { useAddonState, useGlobals, useStorybookApi } from '@storybook/api';
 import { AddonPanel, H2, Button } from '@storybook/components';
-import { EVENTS, PARAM_KEY, ACTIVE_PARAM_KEY } from './constants';
+import { EVENTS, PARAM_KEY, ACTIVE_PARAM_KEY } from '../constants';
 
-import type { RootAttribute } from './types';
+import type { RootAttribute } from '../types';
 
 interface PanelProps {
 	active: boolean;

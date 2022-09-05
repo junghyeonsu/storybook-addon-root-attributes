@@ -2,8 +2,8 @@ import React from 'react';
 import { useAddonState, useGlobals, useStorybookApi } from '@storybook/api';
 import { Icons, IconButton, WithTooltip, TooltipLinkList, Badge } from '@storybook/components';
 
-import { PARAM_KEY, TOOL_ID, ACTIVE_PARAM_KEY, EVENTS } from './constants';
-import { RootAttribute } from './types';
+import { PARAM_KEY, TOOL_ID, ACTIVE_PARAM_KEY, EVENTS } from '../constants';
+import { RootAttribute } from '../types';
 
 // https://next--storybookjs.netlify.app/official-storybook/?path=/story/basics-icon--labels
 export const Tool = () => {

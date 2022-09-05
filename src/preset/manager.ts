@@ -1,8 +1,8 @@
 import { addons, types } from '@storybook/addons';
 
 import { ADDON_ID, TOOL_ID, PANEL_ID, APP_TITLE } from '../constants';
-import { Tool } from '../Tool';
-import { Panel } from '../Panel';
+import { Tool } from '../components/Tool';
+import { Panel } from '../components/Panel';
 
 // Register the addon
 addons.register(ADDON_ID, () => {
