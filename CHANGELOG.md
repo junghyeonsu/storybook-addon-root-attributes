@@ -1,3 +1,15 @@
+# v1.0.5 (Mon Sep 05 2022)
+
+#### ⚠️ Pushed to `main`
+
+- chore: 리드미 수정 ([@junghyeonsu](https://github.com/junghyeonsu))
+
+#### Authors: 1
+
+- 정현수 ([@junghyeonsu](https://github.com/junghyeonsu))
+
+---
+
 # v1.0.3 (Mon Sep 05 2022)
 
 #### ⚠️ Pushed to `main`
