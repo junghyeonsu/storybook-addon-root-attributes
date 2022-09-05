@@ -35,18 +35,32 @@ import { addParameters } from '@storybook/react';
 
 // global
 addParameters({
-  rootAttribute: {
-    defaultState: {
-      name: 'Default',
-      value: null,
-    },
-    states: [
-      {
-        name: 'Dark',
-        value: 'dark',
+  rootAttribute: [
+    {
+      defaultState: {
+        name: 'Default',
+        value: null,
       },
-    ],
-  },
+      states: [
+        {
+          name: 'Dark',
+          value: 'dark',
+        },
+      ],
+    },
+    {
+      defaultState: {
+        name: 'Default',
+        value: null,
+      },
+      states: [
+        {
+          name: 'IOS',
+          value: 'ios',
+        },
+      ],
+    },
+  ],
 });
 ```
 
