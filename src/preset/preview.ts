@@ -13,41 +13,41 @@ import { addParameters } from '@storybook/react';
 import { withRootAttributes } from '../withRootAttributes';
 
 addParameters({
-	rootAttributesTooltip: true,
-	rootAttributes: [
-		{
-			root: 'html',
-			attribute: 'data-scale-color',
-			defaultState: {
-				name: 'Light',
-				value: 'light',
-			},
-			states: [
-				{
-					name: 'Dark',
-					value: 'dark',
-				},
-				{
-					name: 'Gray',
-					value: 'gray',
-				},
-			],
-		},
-		{
-			root: 'html',
-			attribute: 'data-letter-spacing',
-			defaultState: {
-				name: 'IOS',
-				value: 'ios',
-			},
-			states: [
-				{
-					name: 'Android',
-					value: 'android',
-				},
-			],
-		},
-	],
+  rootAttributesTooltip: true,
+  rootAttributes: [
+    {
+      root: 'html',
+      attribute: 'data-color-scheme',
+      defaultState: {
+        name: 'Light',
+        value: 'light',
+      },
+      states: [
+        {
+          name: 'Dark',
+          value: 'dark',
+        },
+        {
+          name: 'Gray',
+          value: 'gray',
+        },
+      ],
+    },
+    {
+      root: 'html',
+      attribute: 'data-letter-spacing',
+      defaultState: {
+        name: 'IOS',
+        value: 'ios',
+      },
+      states: [
+        {
+          name: 'Android',
+          value: 'android',
+        },
+      ],
+    },
+  ],
 });
 
 export const decorators = [withRootAttributes];
