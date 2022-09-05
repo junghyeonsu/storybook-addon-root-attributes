@@ -8,7 +8,41 @@
  *
  * https://storybook.js.org/docs/react/writing-stories/decorators#gatsby-focus-wrapper
  */
-import { withGlobals } from "../withGlobals";
-import { withRoundTrip } from "../withRoundTrip";
+import { addParameters } from '@storybook/react';
 
-export const decorators = [withGlobals, withRoundTrip];
+import { withRootAttributes } from '../withRootAttributes';
+
+addParameters({
+	rootAttributes: [
+		{
+			root: 'html',
+			attribute: 'data-seed-scale-color',
+			defaultState: {
+				name: 'Light',
+				value: 'light',
+			},
+			states: [
+				{
+					name: 'Dark',
+					value: 'dark',
+				},
+			],
+		},
+		{
+			root: 'html',
+			attribute: 'data-seed-letter-spacing',
+			defaultState: {
+				name: 'IOS',
+				value: 'ios',
+			},
+			states: [
+				{
+					name: 'Android',
+					value: 'android',
+				},
+			],
+		},
+	],
+});
+
+export const decorators = [withRootAttributes];
