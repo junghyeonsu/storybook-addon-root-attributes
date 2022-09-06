@@ -1,3 +1,15 @@
+# v1.0.7 (Tue Sep 06 2022)
+
+#### ⚠️ Pushed to `main`
+
+- chore: change export ([@junghyeonsu](https://github.com/junghyeonsu))
+
+#### Authors: 1
+
+- 정현수 ([@junghyeonsu](https://github.com/junghyeonsu))
+
+---
+
 # v1.0.6 (Tue Sep 06 2022)
 
 #### ⚠️ Pushed to `main`
