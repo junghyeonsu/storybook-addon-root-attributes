@@ -1,3 +1,15 @@
+# v1.0.8 (Tue Sep 06 2022)
+
+#### ⚠️ Pushed to `main`
+
+- chore: add error message ([@junghyeonsu](https://github.com/junghyeonsu))
+
+#### Authors: 1
+
+- 정현수 ([@junghyeonsu](https://github.com/junghyeonsu))
+
+---
+
 # v1.0.7 (Tue Sep 06 2022)
 
 #### ⚠️ Pushed to `main`
