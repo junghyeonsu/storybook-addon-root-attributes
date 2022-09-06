@@ -2,7 +2,11 @@
 
 ![demo](/assets/demo.gif)
 
+## What is this
+
 > This project was inspired by [le0pard/storybook-addon-root-attribute](https://github.com/le0pard/storybook-addon-root-attribute)
+
+[The existing library](https://github.com/le0pard/storybook-addon-root-attribute) received **only one attribute.** So, this library can change multiple attributes by receiving the attribute **as array**.
 
 Storybook Addon Root Attributes to switch html, body or some element attribute at runtime for your story [Storybook](https://storybook.js.org)
 
@@ -29,6 +33,8 @@ module.exports = {
 ```
 
 ## Usage
+
+create a file called `preview.js` and add parameter in `addParameters`
 
 ```js
 import { addParameters } from '@storybook/react';
