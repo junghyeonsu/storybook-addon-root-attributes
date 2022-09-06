@@ -1,3 +1,15 @@
+# v1.0.6 (Tue Sep 06 2022)
+
+#### ⚠️ Pushed to `main`
+
+- docs: Add what is this section ([@junghyeonsu](https://github.com/junghyeonsu))
+
+#### Authors: 1
+
+- 정현수 ([@junghyeonsu](https://github.com/junghyeonsu))
+
+---
+
 # v1.0.5 (Mon Sep 05 2022)
 
 #### ⚠️ Pushed to `main`
