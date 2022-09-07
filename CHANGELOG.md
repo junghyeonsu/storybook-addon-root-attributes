@@ -1,3 +1,15 @@
+# v1.0.9 (Wed Sep 07 2022)
+
+#### ⚠️ Pushed to `main`
+
+- fix: IconButton 항상 on 돼 있는 문제 해결 ([@junghyeonsu](https://github.com/junghyeonsu))
+
+#### Authors: 1
+
+- 정현수 ([@junghyeonsu](https://github.com/junghyeonsu))
+
+---
+
 # v1.0.8 (Tue Sep 06 2022)
 
 #### ⚠️ Pushed to `main`
