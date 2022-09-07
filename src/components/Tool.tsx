@@ -70,7 +70,7 @@ export const Tool = () => {
 			))}
 			closeOnClick={true}
 		>
-			<IconButton key="root-attribute" active={true} title="Root Attributes">
+			<IconButton key="root-attribute" active={isToolActive} title="Root Attributes">
 				<Icons icon="cog" />
 			</IconButton>
 		</WithTooltip>
