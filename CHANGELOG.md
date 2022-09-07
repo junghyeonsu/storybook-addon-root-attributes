@@ -1,3 +1,15 @@
+# v1.0.10 (Wed Sep 07 2022)
+
+#### ⚠️ Pushed to `main`
+
+- chore: storybook icon 변경 ([@junghyeonsu](https://github.com/junghyeonsu))
+
+#### Authors: 1
+
+- 정현수 ([@junghyeonsu](https://github.com/junghyeonsu))
+
+---
+
 # v1.0.9 (Wed Sep 07 2022)
 
 #### ⚠️ Pushed to `main`
