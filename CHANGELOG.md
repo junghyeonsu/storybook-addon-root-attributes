@@ -1,3 +1,15 @@
+# v1.0.11 (Fri Nov 04 2022)
+
+#### ⚠️ Pushed to `main`
+
+- feat: change visibility logic ([@junghyeonsu](https://github.com/junghyeonsu))
+
+#### Authors: 1
+
+- 정현수 ([@junghyeonsu](https://github.com/junghyeonsu))
+
+---
+
 # v1.0.10 (Wed Sep 07 2022)
 
 #### ⚠️ Pushed to `main`
