@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAddonState, useGlobals, useStorybookApi } from '@storybook/api';
-import { Icons, IconButton, WithTooltip, TooltipLinkList, Badge, H4, Div } from '@storybook/components';
+import { Icons, IconButton, WithTooltip, TooltipLinkList, H4, Div } from '@storybook/components';
 
 import { PARAM_KEY, TOOL_ID, EVENTS } from '../constants';
 import { RootAttribute } from '../types';
@@ -15,7 +15,7 @@ export const Tool = () => {
 	if (!rootAttributes || !isTooltip) return null;
 	if (!Array.isArray(rootAttributes)) return <div>Root Attributes have to array</div>;
 
-	const toggleMyTool = () => setIsToolActive((prev) => !prev);
+	const toggleMyTool = (visibility: boolean) => setIsToolActive(visibility);
 
 	const lists = rootAttributes.map(({ root, attribute, defaultState, states }) => {
 		return {
