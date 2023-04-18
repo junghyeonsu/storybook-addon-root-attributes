@@ -1,90 +1,113 @@
 {
-	"name": "storybook-addon-root-attributes",
-	"version": "1.0.11",
-	"description": "Change your root attributes",
-	"keywords": [
-		"storybook-addons",
-		"root-attributes"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/junghyeonsu/storybook-addon-root-attributes"
-	},
-	"author": "junghyeonsu <jung660317@naver.com>",
-	"license": "MIT",
-	"main": "dist/cjs/index.js",
-	"module": "dist/esm/index.js",
-	"types": "dist/ts/index.d.ts",
-	"files": [
-		"dist/**/*",
-		"README.md",
-		"*.js",
-		"*.d.ts"
-	],
-	"scripts": {
-		"clean": "rimraf ./dist",
-		"buildBabel": "concurrently \"yarn buildBabel:cjs\" \"yarn buildBabel:esm\"",
-		"buildBabel:cjs": "babel ./src -d ./dist/cjs --extensions \".js,.jsx,.ts,.tsx\"",
-		"buildBabel:esm": "babel ./src -d ./dist/esm --env-name esm --extensions \".js,.jsx,.ts,.tsx\"",
-		"buildTsc": "tsc --declaration --emitDeclarationOnly --outDir ./dist/ts",
-		"prebuild": "yarn clean",
-		"build": "concurrently \"yarn buildBabel\" \"yarn buildTsc\"",
-		"build:watch": "concurrently \"yarn buildBabel:esm -- --watch\" \"yarn buildTsc -- --watch\"",
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"storybook": "start-storybook -p 6006",
-		"start": "concurrently \"yarn build:watch\" \"yarn storybook -- --no-manager-cache --quiet\"",
-		"build-storybook": "build-storybook",
-		"prerelease": "zx scripts/prepublish-checks.mjs",
-		"release": "yarn build && auto shipit",
-		"eject-ts": "zx scripts/eject-typescript.mjs"
-	},
-	"devDependencies": {
-		"@babel/cli": "^7.12.1",
-		"@babel/core": "^7.12.3",
-		"@babel/preset-env": "^7.12.1",
-		"@babel/preset-react": "^7.12.5",
-		"@babel/preset-typescript": "^7.13.0",
-		"@storybook/addon-essentials": "^6.5.8",
-		"@storybook/react": "^6.5.8",
-		"auto": "^10.3.0",
-		"babel-loader": "^8.1.0",
-		"boxen": "^5.0.1",
-		"concurrently": "^6.2.0",
-		"dedent": "^0.7.0",
-		"prettier": "^2.3.1",
-		"prop-types": "^15.7.2",
-		"react": "^17.0.1",
-		"react-dom": "^17.0.1",
-		"rimraf": "^3.0.2",
-		"typescript": "^4.2.4",
-		"zx": "^1.14.1"
-	},
-	"peerDependencies": {
-		"@storybook/addons": "^6.5.8",
-		"@storybook/api": "^6.5.8",
-		"@storybook/components": "^6.5.8",
-		"@storybook/core-events": "^6.5.8",
-		"@storybook/theming": "^6.5.8",
-		"react": "^16.8.0 || ^17.0.0",
-		"react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
-	},
-	"peerDependenciesMeta": {
-		"react": {
-			"optional": true
-		},
-		"react-dom": {
-			"optional": true
-		}
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"storybook": {
-		"displayName": "storybook-addon-root-attributes",
-		"supportedFrameworks": [
-			"react",
-			"html"
-		],
-		"icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
-	}
+  "name": "storybook-addon-root-attributes",
+  "version": "2.0.0",
+  "description": "Change your root attributes",
+  "keywords": [
+    "storybook-addons",
+    "root-attributes"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/junghyeonsu/storybook-addon-root-attributes"
+  },
+  "license": "MIT",
+  "author": "junghyeonsu <jung660317@naver.com>",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/ts/index.d.ts",
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts"
+  ],
+  "scripts": {
+    "prebuild": "yarn clean",
+    "build": "concurrently \"yarn buildBabel\" \"yarn buildTsc\"",
+    "build-storybook": "build-storybook",
+    "build:watch": "concurrently \"yarn buildBabel:esm -- --watch\" \"yarn buildTsc -- --watch\"",
+    "buildBabel": "concurrently \"yarn buildBabel:cjs\" \"yarn buildBabel:esm\"",
+    "buildBabel:cjs": "babel ./src -d ./dist/cjs --extensions \".js,.jsx,.ts,.tsx\"",
+    "buildBabel:esm": "babel ./src -d ./dist/esm --env-name esm --extensions \".js,.jsx,.ts,.tsx\"",
+    "buildTsc": "tsc --declaration --emitDeclarationOnly --outDir ./dist/ts",
+    "clean": "rimraf ./dist",
+    "eject-ts": "zx scripts/eject-typescript.mjs",
+    "prerelease": "zx scripts/prepublish-checks.mjs",
+    "release": "yarn build && auto shipit",
+    "start": "concurrently \"yarn build:watch\" \"yarn storybook -- --no-manager-cache --quiet\"",
+    "storybook": "storybook dev -p 6006",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
+    "@babel/preset-typescript": "^7.13.0",
+    "@storybook/addon-essentials": "^7.0.5",
+    "@storybook/api": "^7.0.5",
+    "@storybook/manager-api": "^7.0.5",
+    "@storybook/preview-api": "^7.0.5",
+    "@storybook/react": "^7.0.5",
+    "@storybook/react-vite": "^7.0.5",
+    "@types/react": "^18.0.37",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "auto": "^10.3.0",
+    "babel-loader": "^8.1.0",
+    "boxen": "^5.0.1",
+    "concurrently": "^6.2.0",
+    "dedent": "^0.7.0",
+    "eslint": "^8.22.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-react-app": "^7.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-json-format": "^2.0.1",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-storybook": "^0.6.4",
+    "prettier": "^2.3.1",
+    "prop-types": "^15.7.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^3.0.2",
+    "storybook": "^7.0.5",
+    "typescript": "^4.2.4",
+    "vite": "^4.2.1",
+    "zx": "^1.14.1"
+  },
+  "peerDependencies": {
+    "@storybook/api": "^7.0.0",
+    "@storybook/components": "^7.0.0",
+    "@storybook/core-events": "^7.0.0",
+    "@storybook/manager-api": "^7.0.0",
+    "@storybook/preview-api": "^7.0.0",
+    "@storybook/theming": "^7.0.0",
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "storybook": {
+    "displayName": "storybook-addon-root-attributes",
+    "supportedFrameworks": [
+      "react",
+      "html"
+    ],
+    "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
+  }
 }

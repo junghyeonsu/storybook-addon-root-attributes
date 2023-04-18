@@ -1,5 +1,7 @@
 # Storybook Addon Root Attributes
 
+> **:star: Available storybook 7.0.0 :star:**
+
 ![demo](/assets/demo.gif)
 
 ## What is this
@@ -37,32 +39,32 @@ module.exports = {
 create a file called `preview.js` and add parameter in `addParameters`
 
 ```js
-import { addParameters } from '@storybook/react';
+import { addParameters } from "@storybook/react";
 
 // global
 addParameters({
   rootAttribute: [
     {
       defaultState: {
-        name: 'Default',
+        name: "Default",
         value: null,
       },
       states: [
         {
-          name: 'Dark',
-          value: 'dark',
+          name: "Dark",
+          value: "dark",
         },
       ],
     },
     {
       defaultState: {
-        name: 'Default',
+        name: "Default",
         value: null,
       },
       states: [
         {
-          name: 'IOS',
-          value: 'ios',
+          name: "IOS",
+          value: "ios",
         },
       ],
     },
@@ -75,29 +77,29 @@ You can use the `rootAttributes` parameter to override resources on each story i
 ```js
 // per story: Button.stories.js
 export default {
-  title: 'Example/Button',
+  title: "Example/Button",
   component: Button,
   parameters: {
     rootAttributes: [
       {
-        root: 'html',
-        attribute: 'data-color-scheme',
+        root: "html",
+        attribute: "data-color-scheme",
         defaultState: {
-          name: 'Yellow',
-          value: 'yellow',
+          name: "Yellow",
+          value: "yellow",
         },
         states: [
           {
-            name: 'Blue',
-            value: 'blue',
+            name: "Blue",
+            value: "blue",
           },
           {
-            name: 'Red',
-            value: 'red',
+            name: "Red",
+            value: "red",
           },
           {
-            name: 'Green',
-            value: 'green',
+            name: "Green",
+            value: "green",
           },
         ],
       },
@@ -113,34 +115,34 @@ addParameters({
   rootAttributesTooltip: true, // you need to set this property
   rootAttributes: [
     {
-      root: 'html',
-      attribute: 'data-scale-color',
+      root: "html",
+      attribute: "data-scale-color",
       defaultState: {
-        name: 'Light',
-        value: 'light',
+        name: "Light",
+        value: "light",
       },
       states: [
         {
-          name: 'Dark',
-          value: 'dark',
+          name: "Dark",
+          value: "dark",
         },
         {
-          name: 'Gray',
-          value: 'gray',
+          name: "Gray",
+          value: "gray",
         },
       ],
     },
     {
-      root: 'html',
-      attribute: 'data-letter-spacing',
+      root: "html",
+      attribute: "data-letter-spacing",
       defaultState: {
-        name: 'IOS',
-        value: 'ios',
+        name: "IOS",
+        value: "ios",
       },
       states: [
         {
-          name: 'Android',
-          value: 'android',
+          name: "Android",
+          value: "android",
         },
       ],
     },
@@ -173,34 +175,34 @@ addParameters({
   rootAttributesTooltip: true,
   rootAttributes: [
     {
-      root: 'html',
-      attribute: 'data-scale-color',
+      root: "html",
+      attribute: "data-scale-color",
       defaultState: {
-        name: 'Light',
-        value: 'light',
+        name: "Light",
+        value: "light",
       },
       states: [
         {
-          name: 'Dark',
-          value: 'dark',
+          name: "Dark",
+          value: "dark",
         },
         {
-          name: 'Gray',
-          value: 'gray',
+          name: "Gray",
+          value: "gray",
         },
       ],
     },
     {
-      root: 'html',
-      attribute: 'data-letter-spacing',
+      root: "html",
+      attribute: "data-letter-spacing",
       defaultState: {
-        name: 'IOS',
-        value: 'ios',
+        name: "IOS",
+        value: "ios",
       },
       states: [
         {
-          name: 'Android',
-          value: 'android',
+          name: "Android",
+          value: "android",
         },
       ],
     },

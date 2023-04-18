@@ -1,11 +1,11 @@
 export interface State {
-	name: string;
-	value: string;
+  name: string;
+  value: string;
 }
 
 export interface RootAttribute {
-	root: string;
-	attribute: string;
-	defaultState: State;
-	states: State[];
+  root: string;
+  attribute: string;
+  defaultState: State;
+  states: State[];
 }

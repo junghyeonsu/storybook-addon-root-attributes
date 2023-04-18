@@ -1,0 +1,4 @@
+!.storybook
+
+**/dist/**/*
+preset.js
