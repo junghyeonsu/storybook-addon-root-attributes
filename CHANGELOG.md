@@ -1,3 +1,15 @@
+# v2.0.2 (Tue Apr 18 2023)
+
+#### ⚠️ Pushed to `main`
+
+- chore: change storybook build command ([@junghyeonsu](https://github.com/junghyeonsu))
+
+#### Authors: 1
+
+- 정현수 ([@junghyeonsu](https://github.com/junghyeonsu))
+
+---
+
 # v1.0.12 (Tue Apr 18 2023)
 
 #### ⚠️ Pushed to `main`
