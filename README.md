@@ -43,7 +43,7 @@ import { addParameters } from "@storybook/react";
 
 // global
 addParameters({
-  rootAttribute: [
+  rootAttributes: [
     {
       defaultState: {
         name: "Default",
