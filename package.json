@@ -1,17 +1,20 @@
 {
   "name": "storybook-addon-root-attributes",
   "version": "2.0.2",
-  "description": "Change your root attributes",
+  "description": "Storybook Addon Root Attributes to switch `Many` html or body attribute at runtime for your story",
   "keywords": [
     "storybook-addons",
-    "root-attributes"
+    "root-attributes",
+    "root",
+    "roots",
+    "many roots"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/junghyeonsu/storybook-addon-root-attributes"
   },
   "license": "MIT",
-  "author": "junghyeonsu <jung660317@naver.com>",
+  "author": "Jung Hyeon-su",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/ts/index.d.ts",
@@ -107,7 +110,6 @@
     "supportedFrameworks": [
       "react",
       "html"
-    ],
-    "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
+    ]
   }
 }
