@@ -12,32 +12,32 @@ interface PanelProps {
 
 export const Panel = (props: PanelProps) => {
   const api = useStorybookApi();
-  const wrongRootAttribute =
-    api.getCurrentParameter<RootAttribute[]>(WRONG_PARAM_KEY);
+  const wrongRootAttribute = api.getCurrentParameter<RootAttribute[]>(WRONG_PARAM_KEY);
   const rootAttributes = api.getCurrentParameter<RootAttribute[]>(PARAM_KEY);
   const [globals, setGlobals] = useGlobals();
 
-  if (wrongRootAttribute)
+  if (wrongRootAttribute) {
     return (
       <AddonPanel {...props}>
         Please change {WRONG_PARAM_KEY} to {PARAM_KEY}
       </AddonPanel>
     );
-  if (!rootAttributes)
+  }
+
+  if (!rootAttributes) {
     return <AddonPanel {...props}>Please input {PARAM_KEY}</AddonPanel>;
-  if (!Array.isArray(rootAttributes))
-    return (
-      <AddonPanel {...props}>Please input {PARAM_KEY} to array</AddonPanel>
-    );
+  }
+
+  if (!Array.isArray(rootAttributes)) {
+    return <AddonPanel {...props}>Please input {PARAM_KEY} to array</AddonPanel>;
+  }
 
   return (
     <AddonPanel {...props}>
       {rootAttributes.map((rootAttribute: RootAttribute) => {
         const { root, attribute, defaultState, states } = rootAttribute;
 
-        const isDefaultPrimary =
-          !globals[PARAM_KEY][attribute] ||
-          globals[PARAM_KEY][attribute] === defaultState.value;
+        const isDefaultPrimary = !globals[PARAM_KEY][attribute] || globals[PARAM_KEY][attribute] === defaultState.value;
 
         return (
           <Div style={{ padding: "20px" }} key={attribute}>

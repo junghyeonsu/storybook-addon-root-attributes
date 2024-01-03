@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { addons, makeDecorator, useEffect } from "@storybook/preview-api";
+import { addons, makeDecorator, useEffect, useGlobals } from "@storybook/preview-api";
 
-import { EVENTS } from "./constants";
+import { EVENTS, PARAM_KEY } from "./constants";
 import type { RootAttribute } from "./types";
 
 interface UpdateRootAttributeParams {
@@ -16,20 +16,13 @@ const getElement = (root: string) => {
   return document.querySelector(root) || document.documentElement;
 };
 
-const updateRootAttribute = ({
-  root = "html",
-  attribute,
-  clickedValue,
-}: UpdateRootAttributeParams) => {
+const updateRootAttribute = ({ root = "html", attribute, clickedValue }: UpdateRootAttributeParams) => {
   const element = getElement(root);
   element.removeAttribute(attribute);
   element.setAttribute(attribute, clickedValue);
 };
 
-const resetRootAttribute = ({
-  root = "html",
-  attribute,
-}: Omit<UpdateRootAttributeParams, "clickedValue">) => {
+const resetRootAttribute = ({ root = "html", attribute }: Omit<UpdateRootAttributeParams, "clickedValue">) => {
   const element = getElement(root);
   element.removeAttribute(attribute);
 };
@@ -38,27 +31,29 @@ export const withRootAttributes = makeDecorator({
   name: "withRootAttributes",
   parameterName: "rootAttributes",
   wrapper: (getStory, context, { parameters }) => {
-    const rootAttributes = parameters?.rootAttributes;
+    const [globals] = useGlobals();
+
+    const rootAttributes = parameters;
+    const globalRootAttributes = globals[PARAM_KEY];
+
+    console.log("globalRootAttributes", globalRootAttributes);
 
     useEffect(() => {
       if (rootAttributes) {
-        rootAttributes.forEach(
-          ({ root, attribute, defaultState }: RootAttribute) =>
-            updateRootAttribute({
-              root,
-              attribute,
-              clickedValue: defaultState.value,
-            }),
+        rootAttributes.forEach(({ root, attribute, defaultState }: RootAttribute) =>
+          updateRootAttribute({
+            root,
+            attribute,
+            clickedValue: globalRootAttributes[attribute] || defaultState.value,
+          }),
         );
       }
       return () => {
         if (rootAttributes) {
-          rootAttributes.forEach(({ root, attribute }: RootAttribute) =>
-            resetRootAttribute({ root, attribute }),
-          );
+          rootAttributes.forEach(({ root, attribute }: RootAttribute) => resetRootAttribute({ root, attribute }));
         }
       };
-    }, [rootAttributes]);
+    }, [globalRootAttributes, rootAttributes]);
 
     addons.getChannel().on(EVENTS.UPDATE, updateRootAttribute);
 
