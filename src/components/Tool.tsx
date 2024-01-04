@@ -2,8 +2,8 @@ import { Div, H4, IconButton, Icons, TooltipLinkList, WithTooltip } from "@story
 import { useGlobals, useStorybookApi } from "@storybook/manager-api";
 import React, { useState } from "react";
 
+import type { RootAttribute } from "..";
 import { EVENTS, PARAM_KEY, TOOL_ID } from "../constants";
-import type { RootAttribute } from "../types";
 
 export const Tool = () => {
   const api = useStorybookApi();

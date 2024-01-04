@@ -2,8 +2,8 @@ import { AddonPanel, Button, Div, H2 } from "@storybook/components";
 import { useGlobals, useStorybookApi } from "@storybook/manager-api";
 import React from "react";
 
+import type { RootAttribute } from "..";
 import { EVENTS, PARAM_KEY, WRONG_PARAM_KEY } from "../constants";
-import type { RootAttribute } from "../types";
 
 interface PanelProps {
   active: boolean;

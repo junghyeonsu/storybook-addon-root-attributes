@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { addons, makeDecorator, useEffect, useGlobals } from "@storybook/preview-api";
 
+import type { RootAttribute } from ".";
 import { EVENTS, PARAM_KEY } from "./constants";
-import type { RootAttribute } from "./types";
 
 interface UpdateRootAttributeParams {
   root: string;
@@ -35,8 +35,6 @@ export const withRootAttributes = makeDecorator({
 
     const rootAttributes = parameters;
     const globalRootAttributes = globals[PARAM_KEY];
-
-    console.log("globalRootAttributes", globalRootAttributes);
 
     useEffect(() => {
       if (rootAttributes) {
