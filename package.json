@@ -29,7 +29,7 @@
   "scripts": {
     "prebuild": "yarn clean",
     "build": "tsup",
-    "build-storybook": "storybook build",
+    "build:storybook": "storybook build",
     "build:watch": "yarn build -- --watch",
     "clean": "rimraf ./dist",
     "eject-ts": "zx scripts/eject-typescript.mjs",
