@@ -6,6 +6,33 @@
 
 #### ⚠️ Pushed to `main`
 
+- chore: yarn ([@junghyeonsu](https://github.com/junghyeonsu))
+- chore: change release path ([@junghyeonsu](https://github.com/junghyeonsu))
+- chore: change author name ([@junghyeonsu](https://github.com/junghyeonsu))
+- chore: remove comment ([@junghyeonsu](https://github.com/junghyeonsu))
+- chore: add GH_TOKEN ([@junghyeonsu](https://github.com/junghyeonsu))
+- chore: src change test ([@junghyeonsu](https://github.com/junghyeonsu))
+- chore: change release setup node version to 20 ([@junghyeonsu](https://github.com/junghyeonsu))
+- chore: bump ([@junghyeonsu](https://github.com/junghyeonsu))
+- docs: update readme description ([@junghyeonsu](https://github.com/junghyeonsu))
+- docs: change readme meta data ([@junghyeonsu](https://github.com/junghyeonsu))
+- docs: change docs ([@junghyeonsu](https://github.com/junghyeonsu))
+- chore: change workflow trigger paths ([@junghyeonsu](https://github.com/junghyeonsu))
+
+#### Authors: 1
+
+- 정현수 ([@junghyeonsu](https://github.com/junghyeonsu))
+
+---
+
+# v2.0.3 (Thu Jan 04 2024)
+
+#### 🐛 Bug Fix
+
+- fix: tooltip highlight and adapt default attribute [#1](https://github.com/junghyeonsu/storybook-addon-root-attributes/pull/1) ([@junghyeonsu](https://github.com/junghyeonsu))
+
+#### ⚠️ Pushed to `main`
+
 - chore: remove comment ([@junghyeonsu](https://github.com/junghyeonsu))
 - chore: add GH_TOKEN ([@junghyeonsu](https://github.com/junghyeonsu))
 - chore: src change test ([@junghyeonsu](https://github.com/junghyeonsu))
