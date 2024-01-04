@@ -14,11 +14,17 @@
     "url": "https://github.com/junghyeonsu/storybook-addon-root-attributes"
   },
   "license": "MIT",
-  "author": "junghyeonsu",
+  "author": "junghyeonsu <jung660317@naver.com>",
   "exports": {
-    "types": "./dist/ts/index.d.ts",
-    "import": "./dist/esm/index.js",
-    "require": "./dist/cjs/index.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "node": "./dist/index.js",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./manager": "./dist/manager.mjs",
+    "./preview": "./dist/preview.mjs",
+    "./package.json": "./package.json"
   },
   "files": [
     "dist/**/*",
