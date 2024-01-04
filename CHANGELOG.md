@@ -1,3 +1,15 @@
+# v2.1.2 (Thu Jan 04 2024)
+
+#### ⚠️ Pushed to `main`
+
+- feat: add preset.js ([@junghyeonsu](https://github.com/junghyeonsu))
+
+#### Authors: 1
+
+- 정현수 ([@junghyeonsu](https://github.com/junghyeonsu))
+
+---
+
 # v2.0.3 (Thu Jan 04 2024)
 
 #### 🐛 Bug Fix
