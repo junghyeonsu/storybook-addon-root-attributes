@@ -10,8 +10,8 @@
  */
 import type { ProjectAnnotations, Renderer } from "@storybook/types";
 
-import { PARAM_KEY } from "../constants";
-import { withRootAttributes } from "../withRootAttributes";
+import { PARAM_KEY } from "./constants";
+import { withRootAttributes } from "./withRootAttributes";
 
 const preview: ProjectAnnotations<Renderer> = {
   decorators: [withRootAttributes],

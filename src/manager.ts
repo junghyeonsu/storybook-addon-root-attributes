@@ -1,8 +1,8 @@
 import { addons, types } from "@storybook/manager-api";
 
-import { Panel } from "../components/Panel";
-import { Tool } from "../components/Tool";
-import { ADDON_ID, APP_TITLE, PANEL_ID, TOOL_ID } from "../constants";
+import { Panel } from "./components/Panel";
+import { Tool } from "./components/Tool";
+import { ADDON_ID, APP_TITLE, PANEL_ID, TOOL_ID } from "./constants";
 
 // Register the addon
 addons.register(ADDON_ID, () => {

@@ -9,5 +9,8 @@
     "playwright.config.ts",
     "e2e",
     "src",
+    "tsup.config.ts",
+    "preview.js",
+    "manager.js",
   ],
 }
