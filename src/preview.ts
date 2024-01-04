@@ -20,6 +20,4 @@ const preview: ProjectAnnotations<Renderer> = {
   },
 };
 
-// src change test
-
 export default preview;
