@@ -2,8 +2,8 @@ name: Release
 
 on:
   push:
-    paths:
-      - "src/**"
+    # paths:
+    #   - "src/**"
 
 jobs:
   release:
