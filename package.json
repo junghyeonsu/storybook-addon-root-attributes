@@ -1,6 +1,6 @@
 {
   "name": "storybook-addon-root-attributes",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Storybook Addon Root Attributes to switch `Many` html or body attribute at runtime for your story (work in storybook 7!)",
   "keywords": [
     "storybook-addons",
